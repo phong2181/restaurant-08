@@ -9,7 +9,7 @@ import DrinksSection from './DrinksSection';
 type MenuSectionKey = 'antipasti' | 'primi' | 'secondi' | 'dolci';
 
 // 2️⃣ Định nghĩa kiểu dữ liệu cho items
-interface MenuItem {
+export interface MenuItem {
   name: string;
   price: string;
   description: string;
@@ -17,7 +17,7 @@ interface MenuItem {
   image: string;
 }
 
-interface MenuSection {
+export interface MenuSection {
   title: string;
   subtitle: string;
   items: MenuItem[];

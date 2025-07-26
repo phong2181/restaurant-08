@@ -1,5 +1,7 @@
+import type { MenuSection, MenuItem as ItemType } from './MenuSection';
+
 type Props = {
-  section: any;
+  section: MenuSection;
 };
 
 export default function MenuItems({ section }: Props) {
@@ -10,7 +12,7 @@ export default function MenuItems({ section }: Props) {
         <p className="text-gray-600 text-lg italic">{section.subtitle}</p>
       </div>
       <div className="grid gap-8">
-        {section.items.map((item: any, index: number) => (
+        {section.items.map((item: ItemType, index: number) => (
           <div key={index} className="bg-amber-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
             <div className="md:flex">
               <div className="md:w-1/3">

@@ -1,9 +1,10 @@
 import { Dispatch, SetStateAction } from 'react';
+import type { MenuSection } from './MenuSection';
 
 type MenuSectionKey = 'antipasti' | 'primi' | 'secondi' | 'dolci';
 
 type Props = {
-  sections: Record<MenuSectionKey, any>;
+  sections: Record<MenuSectionKey, MenuSection>;
   activeSection: MenuSectionKey;
   setActiveSection: Dispatch<SetStateAction<MenuSectionKey>>;
 };
@@ -12,22 +13,21 @@ export default function MenuNavigation({ sections, activeSection, setActiveSecti
   return (
     <div className="flex flex-wrap justify-center space-x-4 mb-12">
       {Object.keys(sections).map((section) => {
-        const key = section as MenuSectionKey; // ✅ ép kiểu
+        const key = section as MenuSectionKey;
         return (
-            <button
+          <button
             key={key}
             onClick={() => setActiveSection(key)}
             className={`px-6 py-3 rounded-full font-semibold transition duration-300 mb-2 ${
-                activeSection === key
+              activeSection === key
                 ? 'bg-red-800 text-white shadow-lg'
                 : 'bg-gray-100 text-gray-700 hover:bg-red-100 hover:text-red-800'
             }`}
-            >
+          >
             {sections[key].title}
-            </button>
+          </button>
         );
-    })}
-
+      })}
     </div>
   );
 }

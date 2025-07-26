@@ -1,5 +1,7 @@
+import type { Drink } from './MenuSection';
+
 type Props = {
-  drinks: any[];
+  drinks: Drink[];
 };
 
 export default function DrinksSection({ drinks }: Props) {

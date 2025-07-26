@@ -23,6 +23,11 @@ export interface MenuSection {
   items: MenuItem[];
 }
 
+export interface Drink {
+  name: string;
+  price: string;
+}
+
 // 3️⃣ Khai báo menuSections có kiểu an toàn
 const menuSections: Record<MenuSectionKey, MenuSection> = {
   antipasti: {
@@ -107,7 +112,7 @@ const menuSections: Record<MenuSectionKey, MenuSection> = {
   }
 };
 
-const drinks = [
+const drinks: Drink[] = [
   { name: 'House Wine (Red/White)', price: '€4/glass' },
   { name: 'Espresso', price: '€2' },
   { name: 'Limoncello', price: '€3/shot' }
